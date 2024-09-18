@@ -27,7 +27,7 @@ void EspLight::addWrappedLightValue(JsonArray telemetryArray, int now){
 
     JsonObject telemetry = telemetryArray.createNestedObject();
     telemetry["T"] = _lightTag;
-    telemetry["V"] = String(_light.getLightLux());
+    telemetry["V"] = _light.getLightLux();
     telemetry["TS"] = now;
 }
 

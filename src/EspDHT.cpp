@@ -32,7 +32,7 @@ void EspDHT::addWrappedTemperatureValue(JsonArray telemetryArray, int now){
 
     JsonObject telemetry = telemetryArray.createNestedObject();
     telemetry["T"] = _temperatureTag;
-    telemetry["V"] = String(_dht.readTemperature());
+    telemetry["V"] = _dht.readTemperature();
     telemetry["TS"] = now;
 }
 
@@ -41,7 +41,7 @@ void EspDHT::addWrappedHumidityValue(JsonArray telemetryArray, int now){
 
     JsonObject telemetry = telemetryArray.createNestedObject();
     telemetry["T"] = _humidityTag;
-    telemetry["V"] = String(_dht.readHumidity());
+    telemetry["V"] = _dht.readHumidity();
     telemetry["TS"] = now;
 }
 

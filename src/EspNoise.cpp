@@ -32,7 +32,7 @@ void EspNoise::addWrappedNoiseValue(JsonArray telemetryArray, int now){
 
     JsonObject telemetry = telemetryArray.createNestedObject();
     telemetry["T"] = _noiseTag;
-    telemetry["V"] = String(analogRead(_noisePin));
+    telemetry["V"] = analogRead(_noisePin);
     telemetry["TS"] = now;
 }
 
@@ -41,7 +41,7 @@ void EspNoise::addWrappedSoundValue(JsonArray telemetryArray, int now){
 
     JsonObject telemetry = telemetryArray.createNestedObject();
     telemetry["T"] = _soundTag;
-    telemetry["V"] = String(analogRead(_soundPin));
+    telemetry["V"] = analogRead(_soundPin);
     telemetry["TS"] = now;
 }
 

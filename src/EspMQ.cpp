@@ -25,7 +25,7 @@ void EspMQ::addWrappedCO2Value(JsonArray telemetryArray, int now){
 
     JsonObject telemetry = telemetryArray.createNestedObject();
     telemetry["T"] = _mqTag;
-    telemetry["V"] = String(_mq.readCO2());
+    telemetry["V"] = _mq.readCO2();
     telemetry["TS"] = now;
 }
 
